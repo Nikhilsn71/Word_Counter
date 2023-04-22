@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Word Counter</title>
+	<style>
+		body {
+			background-color: #F5F5F5;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			color: #555;
+			margin: 20px 0 0;
+			text-align: center;
+		}
+
+		.container {
+			margin: 0 auto;
+			max-width: 800px;
+			padding: 20px;
+		}
+
+		.form-group {
+			margin-bottom: 20px;
+		}
+
+		label {
+			display: block;
+			font-size: 20px;
+			font-weight: bold;
+			margin-bottom: 10px;
+			color: #555;
+		}
+
+		textarea {
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			display: block;
+			font-size: 18px;
+			margin-bottom: 10px;
+			padding: 10px;
+			resize: none;
+			width: 100%;
+		}
+
+		button {
+			background-color: #4CAF50;
+			border: none;
+			border-radius: 5px;
+			color: #FFF;
+			cursor: pointer;
+			font-size: 20px;
+			padding: 10px 20px;
+			transition: background-color 0.3s ease;
+		}
+
+		button:hover {
+			background-color: #3e8e41;
+		}
+
+		.result {
+			background-color: #FFF;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			display: block;
+			font-size: 20px;
+			padding: 10px;
+			text-align: center;
+		}
+
+		.result span {
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Word Counter</h1>
+		<div class="form-group">
+			<label for="input">Enter your text below to count the number of words:</label>
+			<textarea id="input" rows="10" placeholder="Type your text here"></textarea>
+			<button onclick="countWords()">Count Words</button>
+		</div>
+		<div class="result">
+			The text contains <span id="count">0</span> words.
+		</div>
+	</div>
+
+	<script>
+		function countWords() {
+			// Get the input text
+			var text = document.getElementById("input").value;
+			
+			// Count the words
+			var wordCount = text.match(/\b[-?(\w+)?]+\b/gi).length;
+			
+			// Display the word count
+			document.getElementById("count").innerHTML = wordCount;
+		}
+	</script>
+</body>
+</html>
