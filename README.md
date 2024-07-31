@@ -1,5 +1,5 @@
 # Word Counter Website
 
 ~~~bash
-https://nikhilsn71.me/Word_Counter/
+https://Nikhilsn71.github.io/Word_Counter/
 ~~~
